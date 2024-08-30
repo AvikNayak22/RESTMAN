@@ -2,10 +2,14 @@ import { Box, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 
 import { makeStyles } from "@mui/styles";
+import CreateTable from "./CreateTable";
 
 const useStyles = makeStyles({
   component: {
     marginTop: 20,
+  },
+  tab: {
+    textTransform: ["none", "!important"],
   },
 });
 
@@ -27,9 +31,9 @@ const SelectTab = () => {
         }}
         textColor="none"
       >
-        <Tab label="Params" />
-        <Tab label="Headers" />
-        <Tab label="Body" />
+        <Tab label="Params" className={classes.tab} />
+        <Tab label="Headers" className={classes.tab} />
+        <Tab label="Body" className={classes.tab} />
       </Tabs>
       <Box
         role="tabpanel"
@@ -37,7 +41,7 @@ const SelectTab = () => {
         id={`simple-tabpanel-${0}`}
         aria-labelledby={`simple-tab-${0}`}
       >
-        Params
+        <CreateTable text={`Query Params`} />
       </Box>
       <Box
         role="tabpanel"
@@ -45,7 +49,7 @@ const SelectTab = () => {
         id={`simple-tabpanel-${1}`}
         aria-labelledby={`simple-tab-${1}`}
       >
-        Headers
+        <CreateTable text={`Headers`} />
       </Box>
       <Box
         role="tabpanel"
