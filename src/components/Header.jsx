@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   logo: {
-    width: 100,
+    width: 150,
   },
 });
 
