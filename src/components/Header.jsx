@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  logo: {
+    width: 100,
+  },
+});
 
 const Header = () => {
-  return (
-    <div>Header</div>
-  )
-}
+  const classes = useStyles();
 
-export default Header
+  return <img src="./RESTMAN-logo.png" alt="logo" className={classes.logo} />;
+};
+
+export default Header;
